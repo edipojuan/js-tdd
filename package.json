@@ -1,7 +1,7 @@
 {
   "name": "js-tdd",
   "version": "1.0.0",
-  "description": "biblioteca de JS comTDD\u001b[D\u001b[D\u001b[D \u001b[C\u001b[D\u001b[C\u001b[CTDD.",
+  "description": "biblioteca de JS com TDD.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/edipojs/js-tdd/issues"
   },
-  "homepage": "https://github.com/edipojs/js-tdd#readme"
+  "homepage": "https://github.com/edipojs/js-tdd#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0"
+  }
 }
