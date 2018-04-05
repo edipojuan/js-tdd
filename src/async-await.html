@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Async/Await</title>
+</head>
+
+<body></body>
+
+<script>
+
+  // function getPosts() {
+  //   return fetch('https://willianjusten.com.br/search.json')
+  //     .then(data => data.json())
+  //     .then(data => data.map(post => {
+  //       console.log(post.title);
+  //     }))
+  // }
+
+  async function getPosts() {
+    try {
+      const response = await fetch('https://willianjusten.com.br/search.json');
+      const data = await response.json();
+
+      return data.map(post => console.log(post.title));
+    }
+    catch (erro) {
+      console.error('Aconteceu um erro => ', erro);
+    }
+  }
+
+  // getPosts();
+
+  async function getUsers(users) {
+    const promises = users
+      .map(user => fetch(`https://api.github.com/users/${user}`)
+        .then(r => r.json())
+      );
+
+    const people = await Promise.all(promises);
+    console.log(people);
+  }
+
+  getUsers(['edipojs', 'castrolol', 'ircnelson']);
+
+</script>
+
+</html>
